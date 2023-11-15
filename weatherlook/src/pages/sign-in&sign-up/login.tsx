@@ -3,21 +3,23 @@ import styled from "styled-components";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { useForm } from "react-hook-form";
-import * as S from "./login-and-create";
+import * as S from "../../components/sign-in&sign-up/login-and-create";
 import { useState } from "react";
-import { auth } from "./FirebaseConfig";
+import { auth } from "../../components/sign-in&sign-up/FirebaseConfig";
 import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
-import GoogleLogin from "./google-facebook-login";
-import FacebookLogin from "./facebook-login";
+import GoogleLogin from "../../components/sign-in&sign-up/google-login";
+import FacebookLogin from "../../components/sign-in&sign-up/facebook-login";
 
 interface IFormInput {
   email: string;
   password: string;
 }
+
+//나중에 이미 구글 계정이나 페이스북계정이 존재 할시 pop창이 안뜨고 바로 home화면으로 이동할수 있도록 바꿔야됨
 
 export default function Login() {
   const { register, handleSubmit } = useForm<IFormInput>();

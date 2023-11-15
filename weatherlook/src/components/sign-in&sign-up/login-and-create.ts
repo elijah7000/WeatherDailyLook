@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 4.5fr 5fr;
+  grid-template-columns: 5.5fr 5fr;
   justify-content: center;
   align-items: center;
 `;
@@ -60,7 +60,7 @@ export const SubColumn = styled.div`
 export const LoginHeader = styled.div``;
 
 export const LoginTitle = styled.h1`
-  font-size: 40px;
+  font-size: 39px;
   margin-bottom: 15px;
 `;
 
@@ -163,6 +163,10 @@ export const InputTitle = styled.label`
 export const ForgotPassword = styled.span`
   font-size: 13xpx;
   opacity: 0.5;
+  a {
+    color: black;
+    text-decoration: none;
+  }
 `;
 
 export const YesAccount = styled.div`

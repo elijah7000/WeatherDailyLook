@@ -2,23 +2,19 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import Layout from "./Layout";
-import Login from "./sign-in&sing-up/login";
-import CreateAccount from "./sign-in&sing-up/create-account";
-import Home from "./Home";
+import Login from "./pages/sign-in&sign-up/login";
+import CreateAccount from "./pages/sign-in&sign-up/create-account";
+import Home from "./pages/home/Home";
 import { useEffect, useState } from "react";
-import LoadingScreen from "./sign-in&sing-up/loading-screen";
-import { auth } from "./sign-in&sing-up/FirebaseConfig";
+import LoadingScreen from "./components/sign-in&sign-up/loading-screen";
+import { auth } from "./components/sign-in&sign-up/FirebaseConfig";
 import Protected from "./protected-route";
-import ResetPasword from "./sign-in&sing-up/reset-password";
+import ResetPasword from "./pages/sign-in&sign-up/reset-password";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Protected>
-        <Layout />
-      </Protected>
-    ),
+    element: <Layout />,
     children: [
       {
         path: "",
@@ -49,6 +45,7 @@ const Globalstyles = createGlobalStyle`
     background-color: white;
     color:black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
   }
 `;
 
