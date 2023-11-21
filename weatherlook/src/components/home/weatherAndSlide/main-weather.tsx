@@ -41,26 +41,43 @@ const WeatherIcon = styled.img``;
 const Temperature = styled.h1`
   font-size: 45px;
 `;
-
 export default function MainWeather() {
-  const [lat, setLat] = useState(0);
-  const [lng, setLng] = useState(0);
-  const [weather, setWeather] = useState<IDailyWeather>();
-  navigator.geolocation.getCurrentPosition((position) => {
-    setLat(position.coords.latitude);
-    setLng(position.coords.longitude);
-  });
-  const fetchData = async () => {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEYS}&units=metric`
-    );
-    const data = await response.json();
-    setWeather(data);
-  };
+  const [weather, setWeather] = useState<IDailyWeather | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            fetchWeatherData(latitude, longitude);
+          },
+          (error) => {
+            setError(
+              "Error getting your location. Please allow location access."
+            );
+          }
+        );
+      } catch (error) {
+        setError("Error getting your location.");
+      }
+    };
+
     fetchData();
   }, []);
+
+  const fetchWeatherData = async (lat: number, lng: number) => {
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEYS}&units=metric`
+      );
+      const data = await response.json();
+      setWeather(data);
+    } catch (error) {
+      setError("Error fetching weather data.");
+    }
+  };
   const weatherIcon = `https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`;
   return (
     <Container>

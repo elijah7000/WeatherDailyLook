@@ -1,6 +1,7 @@
 import { url } from "inspector";
 import styled from "styled-components";
 import img from "../../../assets/men.jpg";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 60vh;
@@ -20,7 +21,7 @@ const Container = styled.div`
     "a b c"
     " a d c";
   gap: 15px;
-  grid-template-columns: 35% 25% 35%;
+  grid-template-columns: 35% 35%;
 `;
 
 const Men = styled.div`
@@ -85,7 +86,9 @@ export default function MenAndWomen() {
     <Wrapper>
       <Container>
         <Men>
-          <Title>Men's Clothing</Title>
+          <Link to="/men">
+            <Title>Men's Clothing</Title>
+          </Link>
         </Men>
         <Trend>
           <Title>Trend</Title>

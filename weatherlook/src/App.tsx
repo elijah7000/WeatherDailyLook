@@ -10,6 +10,10 @@ import LoadingScreen from "./components/sign-in&sign-up/loading-screen";
 import { auth } from "./components/sign-in&sign-up/FirebaseConfig";
 import Protected from "./protected-route";
 import ResetPasword from "./pages/sign-in&sign-up/reset-password";
+import Men from "./pages/men/men";
+import Women from "./pages/women/women";
+import Sale from "./pages/sale/sale";
+import NewIn from "./pages/newin/new-in";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +23,22 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "/sale",
+        element: <Sale />,
+      },
+      {
+        path: "/men",
+        element: <Men />,
+      },
+      {
+        path: "/women",
+        element: <Women />,
+      },
+      {
+        path: "/newin",
+        element: <NewIn />,
       },
     ],
   },

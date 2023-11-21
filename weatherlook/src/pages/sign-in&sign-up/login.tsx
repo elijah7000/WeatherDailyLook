@@ -38,11 +38,9 @@ export default function Login() {
         email,
         password
       );
-
       navigate("/");
     } catch (e) {
       if (e instanceof FirebaseError) {
-        console.log(e.message);
         let errorMessage = "Error!";
         switch (e.code) {
           case "auth/invalid-login-credentials":

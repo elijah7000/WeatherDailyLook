@@ -7,6 +7,7 @@ import NewsSlide from "./news-slide";
 
 const Wrapper = styled.div`
   width: 100%;
+  padding: 0px 10px;
   height: 60vh;
   display: grid;
   grid-template-areas:
@@ -14,7 +15,6 @@ const Wrapper = styled.div`
     "c b";
   grid-template-columns: 1.6fr 2fr;
   grid-template-rows: 1.5fr 1fr;
-  margin-top: 150px;
 `;
 
 const MainWeatherContainer = styled.div`
@@ -32,6 +32,8 @@ const WeeklyWeatherContainer = styled.div`
 
 const Slide = styled.div`
   grid-area: b;
+  overflow: hidden;
+  margin-left: 10px;
 `;
 
 export default function WeatherAndSlide() {

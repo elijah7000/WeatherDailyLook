@@ -32,16 +32,16 @@ export default function HeaderBottomColumn() {
     <Column>
       <Menu>
         <MenuList>
-          <Link to="">Sale</Link>
+          <Link to="/sale">Sale</Link>
         </MenuList>
         <MenuList>
-          <Link to="">Men</Link>
+          <Link to="/men">Men</Link>
         </MenuList>
         <MenuList>
-          <Link to="">Women</Link>
+          <Link to="/women">Women</Link>
         </MenuList>
         <MenuList>
-          <Link to="">New in</Link>
+          <Link to="/newin">New in</Link>
         </MenuList>
       </Menu>
     </Column>

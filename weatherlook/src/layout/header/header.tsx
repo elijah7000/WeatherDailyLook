@@ -19,7 +19,8 @@ const Header = styled.header`
   align-items: center;
   flex-direction: column;
   position: fixed;
-  z-index: 2;
+  top: 0;
+  z-index: 100;
 `;
 
 export default function HomeHeader() {

@@ -34,6 +34,10 @@ const TopColumn = styled.div`
   .icon {
     font-size: 30px;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 const Search = styled.input`
@@ -83,7 +87,9 @@ export default function HeaderTopColumn() {
         <Search type="text" placeholder="Search"></Search>
       </TopColumn>
       <TopColumn>
-        <Title>WeatherDailyLook</Title>
+        <Link to="/">
+          <Title>WeatherDailyLook</Title>
+        </Link>
       </TopColumn>
       <TopColumn>
         <FaShoppingBasket className="icon" />

@@ -14,7 +14,7 @@ export default function FacebookLogin() {
   const onClick = async () => {
     try {
       const provider = new FacebookAuthProvider();
-      signInWithPopup(auth, provider);
+      await signInWithPopup(auth, provider);
       navigate("/");
     } catch (error) {
       console.error(error);
