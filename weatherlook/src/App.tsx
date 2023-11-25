@@ -7,13 +7,13 @@ import CreateAccount from "./pages/sign-in&sign-up/create-account";
 import Home from "./pages/home/Home";
 import { useEffect, useState } from "react";
 import LoadingScreen from "./components/sign-in&sign-up/loading-screen";
-import { auth } from "./components/sign-in&sign-up/FirebaseConfig";
-import Protected from "./protected-route";
+import { auth } from "./FirebaseConfig";
 import ResetPasword from "./pages/sign-in&sign-up/reset-password";
 import Men from "./pages/men/men";
 import Women from "./pages/women/women";
 import Sale from "./pages/sale/sale";
 import NewIn from "./pages/newin/new-in";
+import UserInfo from "./pages/userInfo/user-setting";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/newin",
         element: <NewIn />,
+      },
+      {
+        path: "/userinfo",
+        element: <UserInfo />,
       },
     ],
   },

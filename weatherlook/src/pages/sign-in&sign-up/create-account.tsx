@@ -4,7 +4,7 @@ import * as S from "../../components/sign-in&sign-up/login-and-create";
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../components/sign-in&sign-up/FirebaseConfig";
+import { auth } from "../../FirebaseConfig";
 import { FirebaseError } from "firebase/app";
 import GoogleLogin from "../../components/sign-in&sign-up/google-login";
 import FacebookLogin from "../../components/sign-in&sign-up/facebook-login";

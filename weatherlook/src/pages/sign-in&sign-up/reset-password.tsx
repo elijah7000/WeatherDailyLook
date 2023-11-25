@@ -6,7 +6,7 @@ import { useState } from "react";
 import { GoArrowLeft } from "react-icons/go";
 import { Link, useNavigate } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../../components/sign-in&sign-up/FirebaseConfig";
+import { auth } from "../../FirebaseConfig";
 import { FirebaseError } from "firebase/app";
 
 const Background = styled.img`

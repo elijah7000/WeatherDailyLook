@@ -6,7 +6,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { log } from "console";
-import { auth } from "../../components/sign-in&sign-up/FirebaseConfig";
+import { auth } from "../../FirebaseConfig";
 import HeaderTopColumn from "./topcolumn";
 import HeaderBottomColumn from "./bottomcolumn";
 

@@ -5,7 +5,7 @@ import { BsFacebook } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 import * as S from "../../components/sign-in&sign-up/login-and-create";
 import { useState } from "react";
-import { auth } from "../../components/sign-in&sign-up/FirebaseConfig";
+import { auth } from "../../FirebaseConfig";
 import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,

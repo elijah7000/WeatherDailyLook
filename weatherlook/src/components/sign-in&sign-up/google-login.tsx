@@ -5,7 +5,7 @@ import {
   signInWithPopup,
   signInWithRedirect,
 } from "firebase/auth";
-import { auth } from "./FirebaseConfig";
+import { auth } from "../../FirebaseConfig";
 import { useNavigate } from "react-router-dom";
 import * as S from "./login-and-create";
 import { FcGoogle } from "react-icons/fc";

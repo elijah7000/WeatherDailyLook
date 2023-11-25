@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { auth } from "./components/sign-in&sign-up/FirebaseConfig";
+import { auth } from "./FirebaseConfig";
 
 export default function Protected({ children }: { children: React.ReactNode }) {
   const user = auth.currentUser;

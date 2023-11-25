@@ -5,7 +5,6 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 100%;
   height: 100%;
 `;
@@ -37,7 +36,6 @@ const OptionList = styled.option``;
 
 const MiddleContainer = styled.div`
   height: 90%;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;

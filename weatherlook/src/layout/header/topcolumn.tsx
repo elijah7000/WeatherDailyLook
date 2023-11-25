@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { FaShoppingBasket } from "react-icons/fa";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import { FaRegUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
-import { auth } from "../../components/sign-in&sign-up/FirebaseConfig";
+import { auth } from "../../FirebaseConfig";
 import { Link } from "react-router-dom";
+import App from "../../App";
+import UserMenu from "./usermenu";
 
 const Column = styled.div`
   display: flex;
@@ -61,6 +62,7 @@ const Sign = styled.button`
   background-color: inherit;
   font-size: 15px;
   cursor: pointer;
+  font-weight: 600;
   a {
     color: black;
     text-decoration: none;
@@ -68,18 +70,18 @@ const Sign = styled.button`
 `;
 
 export default function HeaderTopColumn() {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   const [user, setUser] = useState(null);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(auth.currentUser);
   const signOutUser = async () => {
     try {
-      setLogin((e) => !e);
       await signOut(auth);
+      setLogin((prevLogin) => !prevLogin);
     } catch (error) {
-      //나중에 바꿔야됨
       console.error("Error signing out", error);
     }
   };
+
   return (
     <Column>
       <TopColumn>
@@ -93,13 +95,13 @@ export default function HeaderTopColumn() {
       </TopColumn>
       <TopColumn>
         <FaShoppingBasket className="icon" />
-        <FaRegUserCircle className="icon" />
+        <UserMenu />
         {login ? (
-          <Sign onClick={signOutUser}>Sing Out</Sign>
-        ) : (
           <Sign>
-            <Link to="/login">Sing in</Link>
+            <Link to="/login">Sign in</Link>
           </Sign>
+        ) : (
+          <Sign onClick={signOutUser}>Sign Out</Sign>
         )}
       </TopColumn>
     </Column>

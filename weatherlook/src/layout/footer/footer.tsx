@@ -8,18 +8,18 @@ import {
 
 const Wrapper = styled.div`
   width: 100%;
-
-  padding: 50px;
+  padding: 60px;
   background-color: #e5e5e4;
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: absolute;
 `;
 
 const FooterListContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin-top: 70px;
   width: 50%;
 `;
 

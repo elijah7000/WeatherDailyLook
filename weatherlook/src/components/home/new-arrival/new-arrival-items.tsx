@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 80vh;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1.5fr 2fr;
   margin-top: 40px;
 `;
 
